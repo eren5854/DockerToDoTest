@@ -35,7 +35,7 @@ public class TodosController(ApplicationDbContext context) : ControllerBase
         var todos = await context
             .Todos
             .Where(p => !p.IsDeleted)
-            .OrderBy(o => o.CreatedDate)
+            .OrderByDescending(o => o.CreatedDate)
             .ToListAsync(cancellationToken);
         return Ok(todos);
     }
