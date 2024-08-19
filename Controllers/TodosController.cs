@@ -3,6 +3,7 @@ using DockerToDoTest.Context;
 using DockerToDoTest.DTOs;
 using DockerToDoTest.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
@@ -25,7 +26,7 @@ public class TodosController(ApplicationDbContext context) : ControllerBase
 
         await context.AddAsync(todo,cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
-        return Ok("Not kaydedildi");
+        return Ok(new { Message = "Not kaydedildi" });
     }
 
     [HttpGet]
@@ -59,7 +60,7 @@ public class TodosController(ApplicationDbContext context) : ControllerBase
 
         context.Update(todo);
         await context.SaveChangesAsync(cancellationToken);
-        return Ok("Not güncellendi");
+        return Ok(new { Message = "Not güncellendi" });
     }
 
     [HttpGet]
@@ -79,7 +80,7 @@ public class TodosController(ApplicationDbContext context) : ControllerBase
 
         context.Update(todo);
         await context.SaveChangesAsync(cancellationToken);
-        return Ok("Not silindi");
+        return Ok(new { Message = "Not silindi" });
 
     }
 }
