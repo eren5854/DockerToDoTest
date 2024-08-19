@@ -1,0 +1,11 @@
+services:
+
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api1
+    container_name: DockerTodoTest
+    ports:
+      - 32500:8080

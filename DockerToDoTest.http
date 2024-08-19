@@ -1,0 +1,6 @@
+@DockerToDoTest_HostAddress = http://localhost:5195
+
+GET {{DockerToDoTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
