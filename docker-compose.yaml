@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: docker-todo-server
-    container_name: DockerTodoTest
+    container_name: DockerTodoTestServer
     ports:
       - 32500:8080
