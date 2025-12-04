@@ -8,4 +8,4 @@ services:
     image: docker-todo-server
     container_name: DockerTodoTestServer
     ports:
-      - 32500:8080
+      - 54020:8080
